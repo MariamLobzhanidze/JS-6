@@ -40,6 +40,11 @@
     </form>
 
     <script>
+
+
+        // N1
+        
+
         const form = document.getElementById('sign-up');
         const input = document.querySelector('input[type="number"]');
         form.addEventListener("submit", function (e) {
@@ -73,6 +78,9 @@
                 email: form.email.value,
                 password: form.password.value,
                 confirmPassword: form.confirmPassword.value
+
+
+                // N2
                
             }
             console.log(data)
@@ -90,6 +98,10 @@
                 const itemsArray = [];
                 itemsArray.push(inputText);
                 document.body.appendChild(li);
+
+
+                // N3
+
             });
             const peopleArray = [
             { name: 'mariam', surname: 'lobzhanidze', age: 25, profession: 'Engineer' },
@@ -100,6 +112,54 @@
             ];
             let newPeopleArray = peopleArray.filter(person => person.age > 18);
             console.log (newPeopleArray);
+
+            
+            // N4
+            
+            const users = [
+{
+id: 7,
+email: "michael.lawson@reqres.in",
+first_name: "Michael",
+last_name: "Lawson",
+image: "https://picsum.photos/200/300",
+},
+{
+id: 8,
+email: "lindsay.ferguson@reqres.in",
+first_name: "Lindsay",
+last_name: "Ferguson",
+image: "https://picsum.photos/200/300",
+},
+{
+id: 9,
+email: "tobias.funke@reqres.in",
+first_name: "Tobias",
+last_name: "Funke",
+image: "https://picsum.photos/200/300",
+},
+{
+id: 10,
+email: "byron.fields@reqres.in",
+first_name: "Byron",
+last_name: "Fields",
+image: "https://picsum.photos/200/300",
+},
+{
+id: 11,
+email: "george.edwards@reqres.in",
+first_name: "George",
+last_name: "Edwards",
+image: "https://picsum.photos/200/300",
+},
+{
+id: 12,
+email: "rachel.howell@reqres.in",
+first_name: "Rachel",
+last_name: "Howell",
+image: "https://picsum.photos/200/300",
+}
+];
 
         </script>
       
