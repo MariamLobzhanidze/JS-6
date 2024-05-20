@@ -43,7 +43,7 @@
 
 
         // N1
-        
+
 
         const form = document.getElementById('sign-up');
         const input = document.querySelector('input[type="number"]');
@@ -161,6 +161,16 @@ image: "https://picsum.photos/200/300",
 }
 ];
 
+const card = document.createElement("div");
+document.body.appendChild(card)
+
+const cardWrapper = document.getElementById("cards");
+      users.slice(0, 4).forEach((user) => {
+        const card = createUserCard(user);
+        cardWrapper.appendChild(card);
+      });
+
+      
         </script>
       
 </body>
