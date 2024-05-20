@@ -1,11 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <form id="sign-up" name="signUp">
+        <div>
+            <input type="text" name="first_name" required>
+            <label for="first_name">first name</label>
+        </div>
+        <div>
+            <input type="text" name="last_name" required>
+            <label for="last-name" required>last name</label>
+        </div>
+        <div>
+            <input type="email" name="email" required>
+            <label for="email">email</label>
+        </div>
+        <div>
+            <input type="password" name="password" required>
+            <label for="password">password</label>
+        </div>
+        <div>
+            <input type="password" name="confirmPassword" required>
+            <label for="confirmPassword">confirm password</label>
+        </div>
+        <textarea></textarea>
+        <div>
+            <button>registration</button>
+        </div>
+    </form> 
+    <form id="add-text">
+        <input type="text" id="text-input">
+        <button id="button-text">add</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('sign-up');
+        const input = document.querySelector('input[type="number"]');
+        form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        try {
+        let form = document.forms.signUp
+        if (form.first_name.value.length < 6) {
+            throw new Error("first name must be more than 5 characters")
+            return
+        } 
+        if (form.last_name.value.length < 6) {
+            throw new Error("last name must be more than 5 characters")
+            return
+        } 
+        if (form.password.value.length < 6) {
+            throw new Error("password must be more than 5 characters")
+            return
+        }
+        if (form.password.value !== form.confirmPassword.value) {
+            throw new Error("password does not match")
+            return
+        }
+        if (form.textarea.value.length > 100) {
+            throw new Error("more than 100")
+            return
+        }
+
+        const data = {
+                first_name: form.first_name.value,
+                last_name: form.larst_name.value,
+                email: form.email.value,
+                password: form.password.value,
+                confirmPassword: form.confirmPassword.value
+               
+            }
+            console.log(data)
+            } catch (e) {
+            const p = document.createElement('p');
+            p.textContent = e.message;
+            p.style.color = "pink"
+            document.body.appendChild(p);
+            }
+            });
+            let inputText = document.getElementById ("text-input");
+            let buttonText =document.getElementById ("button-text");
+            buttonText.addEventListener ("click", function (e) {
+                const li = document.createElement('li');
+                const itemsArray = [];
+                itemsArray.push(inputText);
+                document.body.appendChild(li);
+            });
+            const peopleArray = [
+            { name: 'mariam', surname: 'lobzhanidze', age: 25, profession: 'Engineer' },
+            { name: 'ana', surname: 'jakeli', age: 26, profession: 'none' },
+            { name: 'liliana', surname: 'gagoshidze', age: 27, profession: 'Doctor' },
+            { name: 'leri', surname: 'lobzhanidze', age: 17, profession: 'Designer' },
+            { name: 'liza', surname: 'rekhviashvili', age: 24, profession: 'Manager' }
+            ];
+            let newPeopleArray = peopleArray.filter(person => person.age > 18);
+            console.log (newPeopleArray);
+
+        </script>
+      
 </body>
 </html>
